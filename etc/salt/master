@@ -1,0 +1,15 @@
+---
+user: dannyla
+root_dir: .
+salt-ssh:
+  config_dir: .
+  max_procs: 30
+  wipe_ssh: True
+
+file_roots:
+  base:
+    - /home/dannyla/code/github/my-salty-servers/srv/salt/
+
+pillar_roots:
+  base:
+    - /home/dannyla/code/github/my-salty-servers/src/salt/pillar/
