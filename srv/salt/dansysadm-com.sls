@@ -14,6 +14,8 @@ nginx:
       - pkg: nginx
       - file: /etc/nginx/nginx.conf
       - file: /etc/nginx/sites-enabled/dansysadm-com.conf
+      - file: /etc/nginx/sites-enabled/default
+      - git: git-dansysadm-com
 
 /etc/nginx/nginx.conf:
   file:

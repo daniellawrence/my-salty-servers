@@ -1,0 +1,14 @@
+auto eth0
+iface eth0 inet static
+        address 107.170.198.14
+	netmask 255.255.240.0
+	gateway 107.170.192.1
+	up ip addr add 10.12.0.5/16 dev eth0
+	dns-nameservers 8.8.8.8 8.8.4.4
+
+iface eth0 inet6 static
+        address 2604:a880:1:20::1dc:a001
+	netmask 64
+	gateway 2604:a880:1:20::1
+	autoconf 0
+	dns-nameservers 2001:4860:4860::8844 2001:4860:4860::8888 209.244.0.3

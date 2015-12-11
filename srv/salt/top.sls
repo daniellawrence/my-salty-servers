@@ -6,3 +6,4 @@ base:
   'dansysadm.com':
     - dansysadm-com
     - https
+    - network

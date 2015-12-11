@@ -53,4 +53,4 @@ cmd-setup-dot-files:
   cmd.run:
     - name: ./setup-dotfiles
     - cwd: /home/dannyla/.dot-files
-      
+    - user: dannyla
