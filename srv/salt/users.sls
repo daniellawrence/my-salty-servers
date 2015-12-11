@@ -30,6 +30,27 @@ sudo_package:
     - group: root
     - mode: 440
                               
-  
-  
-    
+git-dot-files:
+  git.latest:
+    - name: https://github.com/daniellawrence/dot-files
+    - rev: master
+    - target: /home/dannyla/.dot-files
+    - require:
+        - pkg: git
+        - user: dannyla
+
+/home/dannyla/.dot-files:
+  file.directory:
+    - user: dannyla
+    - group: dannyla
+    - recurse:
+      - user
+      - group
+    - watch:
+      - git: git-dot-files
+
+cmd-setup-dot-files:
+  cmd.run:
+    - name: ./setup-dotfiles
+    - cwd: /home/dannyla/.dot-files
+      
