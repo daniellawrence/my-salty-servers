@@ -5,5 +5,6 @@ base:
     - upgrade
   'dansysadm.com':
     - dansysadm-com
-    - https
     - network
+    - docker
+    - gogs
