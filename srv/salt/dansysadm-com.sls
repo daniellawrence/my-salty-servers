@@ -3,6 +3,10 @@ git:
   pkg:
     - installed
 
+jekyll:
+  pkg:
+    - installed
+
 nginx:
   pkg:
     - installed
@@ -35,18 +39,16 @@ nginx:
   file:
     - absent
 
-/usr/share/nginx:
+/usr/share/nginx/dansysadm.com:
   file.directory:
     - user: www-data
     - group: www-data
-    - mode: 0555
+    - mode: 0755
     - makedirs: True
     - recurse:
       - user
       - group
       - mode    
-    - watch:
-      - git: git-dansysadm-com  
 
 /etc/nginx/sites-enabled/dansysadm-com.conf:
   file:
@@ -63,7 +65,17 @@ git-dansysadm-com:
   git.latest:
     - name: https://github.com/daniellawrence/daniellawrence.github.io
     - rev: master
-    - user: root
+    - user: www-data
     - target: /usr/share/nginx/dansysadm.com
     - require:
         - pkg: nginx
+        - file: /usr/share/nginx/dansysadm.com
+
+build-site:
+  cmd.run:
+    - name: jekyll build
+    - cwd: /usr/share/nginx/dansysadm.com
+    - user: www-data
+    - require:
+      - git: git-dansysadm-com
+      - pkg: jekyll
