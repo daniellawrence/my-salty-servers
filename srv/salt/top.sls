@@ -8,3 +8,6 @@ base:
     - network
     - docker
     - gogs
+  'csgo.dansysadm.com':
+    - steam
+    - docker

@@ -1,1 +1,4 @@
 dansysadm.com: 107.170.198.14
+csgo.dansysadm.com:
+  host: 162.243.155.40
+  user: root

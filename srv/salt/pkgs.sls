@@ -4,3 +4,4 @@ base_packages:
     - pkgs:
         - curl
         - emacs24
+        - git

@@ -36,7 +36,7 @@ git-dot-files:
     - rev: master
     - target: /home/dannyla/.dot-files
     - require:
-        - pkg: git
+        - pkg: base_packages
         - user: dannyla
 
 /home/dannyla/.dot-files:

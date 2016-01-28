@@ -1,0 +1,3 @@
+if [ -z ${TMUX} ]; then
+  /usr/bin/tmux attach || /usr/bin/tmux
+fi

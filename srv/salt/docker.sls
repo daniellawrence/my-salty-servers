@@ -2,19 +2,18 @@ apt-transport-https:
   pkg.latest:
     - refresh: True
 
-python-pip:
-  pkg.installed
+# python-pip:
+#  pkg.installed
 
-docker-py:
-  pip.installed:
-    - require:
-      - pkg: python-pip
+# docker-py:
+#  pip.installed:
+#    - require:
+#      - pkg: python-pip
     
 docker-io-repo:
   pkgrepo.managed:
     - humanname: Dotdeb
     - name: deb https://apt.dockerproject.org/repo debian-jessie main  
-    # - dist: debian-jessie
     - file: /etc/apt/sources.list.d/docker-io.list
     - keyid: 58118E89F3A912897C070ADBF76221572C52609D
     - keyserver: p80.pool.sks-keyservers.net
@@ -27,7 +26,7 @@ docker-engine:
     - require:
       - pkgrepo: docker-io-repo
       - pkg: apt-transport-https
-  
+
 docker:
   service:
     - running
